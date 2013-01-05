@@ -31,6 +31,10 @@ propel:
         options:              {}
         attributes:           {}
 
+    behaviors:
+        extra_properties:     vendor.CarpeHora.ExtraPropertiesBehavior.src.ExtraPropertiesBehavior
+        simple_calculations:     vendor.SimpleCalculationsBehavior.src.SimpleCalculationsBehavior
+
 
 # Twig Configuration
 twig:

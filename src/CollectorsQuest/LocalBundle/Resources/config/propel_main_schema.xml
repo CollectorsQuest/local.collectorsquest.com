@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" defaultIdMethod="native" namespace="CollectorsQuest\LocalBundle\Model" >
+
+  <table name="collector">
+    <behavior name="archivable">
+      <parameter name="archive_class" value="CollectorArchive"/>
+      <parameter name="archived_at_column" value="archived_at"/>
+    </behavior>
+    <behavior name="sluggable">
+      <parameter name="slug_pattern" value="{DisplayName}"/>
+      <parameter name="permanent" value="false"/>
+      <parameter name="replace_pattern" value="/[^\\pL\\d]+/u"/>
+    </behavior>
+    <!--
+    <behavior name="ratable">
+      <parameter name="max_rate" value="5"/>
+      <parameter name="user_table" value="sf_guard_user"/>
+      <parameter name="dimensions" value="Content, Image(s)"/>
+    </behavior>
+    -->
+    <behavior name="extra_properties" />
+    <behavior name="timestampable" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="graph_id" type="integer" required="false" />
+    <unique>
+      <unique-column name="graph_id" />
+    </unique>
+    <column name="facebook_id" type="varchar" size="20" />
+    <unique>
+      <unique-column name="facebook_id" />
+    </unique>
+    <column name="username" type="varchar" size="64" required="true" />
+    <unique>
+      <unique-column name="username" />
+    </unique>
+    <column name="display_name" type="varchar" size="64" required="true" primaryString="1" />
+    <unique>
+      <unique-column name="display_name" />
+    </unique>
+    <column name="slug" type="varchar" size="64" required="true" />
+    <unique>
+      <unique-column name="slug" />
+    </unique>
+    <column name="sha1_password" type="varchar" size="40" required="true" />
+    <column name="portable_password" type="varchar" size="64" required="true" />
+    <column name="salt" type="varchar" size="32" required="true" />
+    <column name="email" type="varchar" size="128" />
+    <unique>
+      <unique-column name="email" />
+    </unique>
+    <column name="user_type" type="char" sqlType="ENUM(&#039;Collector&#039;,&#039;Seller&#039;)" default="Collector" required="true" />
+    <column name="locale" type="varchar" size="5" default="en_US" />
+    <column name="score" type="integer" default="0" />
+    <column name="spam_score" type="integer" default="0" />
+    <column name="is_spam" type="boolean" default="false" />
+    <column name="is_public" type="boolean" default="true" />
+    <column name="has_completed_registration" type="boolean" default="false" />
+    <column name="session_id" type="varchar" size="32" />
+    <column name="cookie_uuid" type="varchar" size="32" />
+    <unique>
+      <unique-column name="cookie_uuid" />
+    </unique>
+    <column name="last_seen_at" type="timestamp" />
+    <column name="last_visited_at" type="timestamp" />
+    <column name="eblob" type="longvarchar" default="null" />
+  </table>
+
+  <table name="collector_profile">
+    <behavior name="archivable">
+      <parameter name="archive_class" value="CollectorProfileArchive"/>
+      <parameter name="archived_at_column" value="archived_at"/>
+    </behavior>
+    <behavior name="extra_properties" />
+    <behavior name="timestampable" />
+    <behavior name="simple_calculations">
+      <parameter name="columns" value="num_views"/>
+    </behavior>
+    <column name="collector_id" type="integer" primaryKey="true" required="true" />
+    <foreign-key foreignTable="collector" onDelete="cascade">
+      <reference local="collector_id" foreign="id" />
+    </foreign-key>
+    <column name="collector_type" type="enum" valueSet="casual, occasional, serious, obsessive, expert" default="casual" required="true" />
+    <column name="birthday" type="date" />
+    <column name="gender" type="char" sqlType="ENUM(&#039;f&#039;,&#039;m&#039;)" />
+    <column name="zip_postal" type="varchar" size="10" />
+    <column name="country_iso3166" type="char" size="2" required="false" />
+    <!--
+    <foreign-key foreignTable="geo_country">
+      <reference local="country_iso3166" foreign="iso3166" />
+    </foreign-key>
+    -->
+    <column name="website" type="varchar" size="128" />
+    <column name="num_views" type="integer" default="0" />
+    <column name="is_featured" type="boolean" default="false" />
+    <column name="is_seller" type="boolean" default="false" />
+    <column name="is_image_auto" type="boolean" default="true" />
+  </table>
+
+  <table name="collector_email">
+    <behavior name="timestampable" />
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="collector_id" type="integer" required="true" />
+    <foreign-key foreignTable="collector" onDelete="cascade">
+      <reference local="collector_id" foreign="id" />
+    </foreign-key>
+    <column name="email" type="varchar" size="128" />
+    <index>
+      <index-column name="email" />
+    </index>
+    <column name="hash" type="varchar" size="128" required="true" />
+    <column name="salt" type="varchar" size="32" required="true" />
+    <column name="is_verified" type="boolean" default="false" />
+    <unique name="unq_collector_email">
+      <unique-column name="collector_id" />
+      <unique-column name="email" />
+    </unique>
+  </table>
+
+  <table name="collector_address">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="collector_id" type="integer" required="true" />
+    <foreign-key foreignTable="collector" onDelete="cascade">
+      <reference local="collector_id" foreign="id" />
+    </foreign-key>
+    <column name="full_name" type="varchar" required="true" size="255" />
+    <column name="address_line_1" type="varchar" required="true" size="255" />
+    <column name="address_line_2" type="varchar" required="false" size="255" />
+    <column name="city" type="varchar" required="true" size="100" />
+    <column name="state_region" type="varchar" required="false" size="100" />
+    <column name="zip_postcode" type="varchar" required="false" size="50" />
+    <column name="country_iso3166" type="char" size="2" required="true" />
+    <!--
+    <foreign-key foreignTable="geo_country">
+      <reference local="country_iso3166" foreign="iso3166" />
+    </foreign-key>
+    -->
+    <column name="phone" type="varchar" required="true" size="50" />
+    <column name="is_primary" type="boolean" required="true" default="false" />
+  </table>
+
+  <table name="collector_identifier">
+    <behavior name="archivable">
+      <parameter name="archive_class" value="CollectorIdentifierArchive"/>
+      <parameter name="archived_at_column" value="archived_at"/>
+    </behavior>
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="collector_id" type="integer" required="true" />
+    <foreign-key foreignTable="collector" onDelete="cascade">
+      <reference local="collector_id" foreign="id" />
+    </foreign-key>
+    <column name="identifier" type="varchar" size="255" />
+    <unique>
+      <unique-column name="identifier" />
+    </unique>
+    <column name="provider" type="varchar" size="20" />
+    <column name="created_at" type="timestamp" />
+  </table>
+
+  <table name="collector_geocache">
+    <behavior name="archivable">
+      <parameter name="archive_class" value="CollectorGeocacheArchive"/>
+      <parameter name="log_archived_at" value="false"/>
+    </behavior>
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="collector_id" type="integer" required="true" />
+    <foreign-key foreignTable="collector" onDelete="cascade">
+      <reference local="collector_id" foreign="id" />
+    </foreign-key>
+    <column name="country_iso3166" type="char" size="2" required="false" />
+    <!--
+    <foreign-key foreignTable="geo_country">
+      <reference local="country_iso3166" foreign="iso3166" />
+    </foreign-key>
+    -->
+    <column name="state" type="varchar" size="64" />
+    <column name="county" type="varchar" size="64" />
+    <column name="city" type="varchar" size="64" />
+    <column name="zip_postal" type="char" size="10" />
+    <column name="address" type="varchar" size="128" />
+    <column name="latitude" type="float" sqlType="DECIMAL(8,5)" />
+    <column name="longitude" type="float" sqlType="DECIMAL(8,5)" />
+    <column name="timezone" type="varchar" size="128" />
+  </table>
+
+
+
+
+
+  <table name="content_category">
+    <behavior name="sluggable">
+      <parameter name="slug_pattern" value="{Name}"/>
+      <parameter name="permanent" value="false"/>
+      <parameter name="replace_pattern" value="/[^\\pL\\d]+/u"/>
+    </behavior>
+    <behavior name="extra_properties" />
+    <behavior name="nested_set" />
+    <!--
+    <behavior name="aggregate_column">
+      <parameter name="name" value="num_collectibles_for_sale"/>
+      <parameter name="foreign_table" value="collectible"/>
+    </behavior>
+    -->
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="collection_category_id" type="integer" required="false" />
+    <column name="name" type="varchar" size="64" required="true" primaryString="1" />
+    <column name="name_singular" type="varchar" size="64" required="false" />
+    <column name="slug" type="varchar" size="64" required="true" />
+    <column name="description" type="longvarchar" required="false" />
+  </table>
+
+
+  <table name="term">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="name" type="varchar" size="100" primaryString="1" />
+  </table>
+
+  <table name="term_relationship">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="term_id" type="integer" />
+    <foreign-key foreignTable="term">
+      <reference local="term_id" foreign="id" />
+    </foreign-key>
+    <column name="model" type="varchar" size="30" />
+    <index>
+      <index-column name="model" />
+    </index>
+    <column name="model_id" type="integer" />
+  </table>
+
+
+</database>

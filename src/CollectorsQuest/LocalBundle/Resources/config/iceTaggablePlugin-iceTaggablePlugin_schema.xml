@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" defaultIdMethod="native" namespace="CollectorsQuest\LocalBundle\Model">
+
+  <table name="tag" phpName="iceModelTag">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="name" type="varchar" size="128" primaryString="1" />
+    <column name="slug" type="varchar" size="255" />
+    <column name="is_triple" type="boolean" default="false" />
+    <column name="triple_namespace" type="varchar" size="128" />
+    <column name="triple_key" type="varchar" size="128" />
+    <column name="triple_value" type="varchar" size="128" />
+    <index name="tag_I_1">
+      <index-column name="name" />
+    </index>
+    <index name="tag_I_2">
+      <index-column name="triple_namespace" />
+      <index-column name="triple_key" />
+    </index>
+  </table>
+
+  <table name="tagging" phpName="iceModelTagging">
+    <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+    <column name="tag_id" type="integer" required="true" />
+    <foreign-key foreignTable="tag" onDelete="CASCADE">
+      <reference local="tag_id" foreign="id" />
+    </foreign-key>
+    <column name="taggable_model" type="varchar" size="50" />
+    <column name="taggable_id" type="integer" />
+    <index name="tagging_I_1">
+      <index-column name="taggable_model" />
+      <index-column name="taggable_id" />
+    </index>
+  </table>
+
+</database>

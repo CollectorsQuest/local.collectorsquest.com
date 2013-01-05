@@ -1,5 +1,16 @@
+# IDE and SCM files
+/nbproject
+.project
+.idea
+*~
+.swp
+
 # Bootstrap
 app/bootstrap*
+
+# Generated Folders
+map
+om
 
 # Symfony directories
 vendor/*
@@ -11,5 +22,3 @@ web/bundles/*
 # Configuration files
 app/config/parameters_prod.yml
 
-# IDE
-/nbproject

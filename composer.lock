@@ -1,6 +1,47 @@
 {
-    "hash": "5092e58ca795ab0c05431964bb2a369e",
+    "hash": "7c3da9c407cbdaa4b45aa8f5130ecd46",
     "packages": [
+        {
+            "name": "CarpeHora/ExtraPropertiesBehavior",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/Carpe-Hora/ExtraPropertiesBehavior.git",
+                "reference": "2ebfb52feaa914ab71e9f2232850c5be0abb1b9c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Carpe-Hora/ExtraPropertiesBehavior/archive/2ebfb52feaa914ab71e9f2232850c5be0abb1b9c.zip",
+                "reference": "2ebfb52feaa914ab71e9f2232850c5be0abb1b9c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4",
+                "propel/propel1": ">=1.6.4"
+            },
+            "time": "2012-06-04 13:22:55",
+            "type": "library",
+            "installation-source": "source",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Julien Muetton",
+                    "email": "julien_muetton@carpe-hora.com",
+                    "homepage": "http://www.carpe-hora.com"
+                }
+            ],
+            "description": "ExtraPropertiesBehavior is a propel behavior to store key/value extra fields in a propel model.",
+            "homepage": "http://carpe-hora.github.com/ExtraPropertiesBehavior/",
+            "keywords": [
+                "propel",
+                "Behavior",
+                "ExtraProperties",
+                "Key value"
+            ]
+        },
         {
             "name": "doctrine/common",
             "version": "2.3.0",
@@ -1387,6 +1428,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "twig/extensions": 20,
-        "kriswallsmith/assetic": 20
+        "kriswallsmith/assetic": 20,
+        "carpehora/extrapropertiesbehavior": 20
     }
 }
