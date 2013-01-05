@@ -1,5 +1,5 @@
 {
-    "hash": "35f74d88e89653bd01f92d3d98b79cf3",
+    "hash": "27c30549b42b1c376b47a98d0b55550e",
     "packages": [
         {
             "name": "CarpeHora/ExtraPropertiesBehavior",
@@ -41,6 +41,18 @@
                 "ExtraProperties",
                 "Key value"
             ]
+        },
+        {
+            "name": "CollectorsQuest/foursquare",
+            "version": "0.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:CollectorsQuest/foursquare-php.git",
+                "reference": "af1a76c36143e6d6062f055dc2dc5d9e22eb0045"
+            },
+            "type": "library",
+            "installation-source": "source",
+            "time": "2013-01-05 20:23:05"
         },
         {
             "name": "doctrine/common",
@@ -1570,6 +1582,7 @@
         "kriswallsmith/assetic": 20,
         "carpehora/extrapropertiesbehavior": 20,
         "mopa/bootstrap-bundle": 20,
-        "mopa/composer-bridge": 20
+        "mopa/composer-bridge": 20,
+        "collectorsquest/foursquare": 20
     }
 }

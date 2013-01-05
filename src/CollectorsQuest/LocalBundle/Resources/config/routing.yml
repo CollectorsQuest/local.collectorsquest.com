@@ -2,6 +2,14 @@ collectors_quest_local_homepage:
     pattern:  /
     defaults: { _controller: CollectorsQuestLocalBundle:Default:index }
 
+collectors_quest_local_connect:
+    pattern:  /connect
+    defaults: { _controller: CollectorsQuestLocalBundle:Default:connect }
+
+collectors_quest_local_callback:
+    pattern:  /callback
+    defaults: { _controller: CollectorsQuestLocalBundle:Default:callback }
+
 collectors_quest_local_privacy:
     pattern:  /privacy
     defaults: { _controller: CollectorsQuestLocalBundle:Default:privacy }
