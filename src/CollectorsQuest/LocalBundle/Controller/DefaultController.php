@@ -21,8 +21,8 @@ class DefaultController extends Controller
         $factory->useVersion(2);
 
         $auth = $factory->getAuthenticationGateway(
-            'MWPCILL1FDZVMWDNFFM2DBZPXA1LE0HB5LWG02EFM0MSBGX4',
-            'OBNVHOT0RSK2K5E5BHDFI4JZOWYYNK0U5CZHIXL0L3ZM4BF2',
+            $this->container->parameters['foursquare_id'],
+            $this->container->parameters['foursquare_secret'],
             'https://foursquare.com/oauth2/authorize',
             'https://foursquare.com/oauth2/access_token',
             'http://local.collectorsquest.dev/app.php/callback'
@@ -40,8 +40,8 @@ class DefaultController extends Controller
         $factory->useVersion(2);
 
         $auth = $factory->getAuthenticationGateway(
-            'MWPCILL1FDZVMWDNFFM2DBZPXA1LE0HB5LWG02EFM0MSBGX4',
-            'OBNVHOT0RSK2K5E5BHDFI4JZOWYYNK0U5CZHIXL0L3ZM4BF2',
+            $this->container->parameters['foursquare_id'],
+            $this->container->parameters['foursquare_secret'],
             'https://foursquare.com/oauth2/authorize',
             'https://foursquare.com/oauth2/access_token',
             'http://local.collectorsquest.dev/app.php/callback'
