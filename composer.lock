@@ -1,5 +1,5 @@
 {
-    "hash": "5092e58ca795ab0c05431964bb2a369e",
+    "hash": "35f74d88e89653bd01f92d3d98b79cf3",
     "packages": [
         {
             "name": "CarpeHora/ExtraPropertiesBehavior",
@@ -22,7 +22,7 @@
             "time": "2012-06-04 13:22:55",
             "type": "library",
             "installation-source": "source",
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1568,7 +1568,7 @@
     "stability-flags": {
         "twig/extensions": 20,
         "kriswallsmith/assetic": 20,
-        "carpehora/extrapropertiesbehavior": 20
+        "carpehora/extrapropertiesbehavior": 20,
         "mopa/bootstrap-bundle": 20,
         "mopa/composer-bridge": 20
     }
