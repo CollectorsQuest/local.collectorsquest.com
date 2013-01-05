@@ -5,15 +5,14 @@
         "psr-0": { "": "src/" }
     },
     "repositories": {
-        "CollectorsQuest/foursquare": {
+        "foursquare-php": {
             "type": "package",
             "package": {
                 "name": "CollectorsQuest/foursquare",
                 "version": "0.1.x-dev",
-                "source": {
-                    "url": "git@github.com:CollectorsQuest/foursquare-php.git",
-                    "type": "git",
-                    "reference": "af1a76c36143e6d6062f055dc2dc5d9e22eb0045"
+                "dist": {
+                    "url": "https://github.com/CollectorsQuest/foursquare-php/archive/master.zip",
+                    "type": "zip"
                 }
             }
         }

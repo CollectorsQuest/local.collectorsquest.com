@@ -1,5 +1,5 @@
 {
-    "hash": "27c30549b42b1c376b47a98d0b55550e",
+    "hash": "7c82742e00098c5491f8d1cb9a0251a8",
     "packages": [
         {
             "name": "CarpeHora/ExtraPropertiesBehavior",
@@ -45,14 +45,14 @@
         {
             "name": "CollectorsQuest/foursquare",
             "version": "0.1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:CollectorsQuest/foursquare-php.git",
-                "reference": "af1a76c36143e6d6062f055dc2dc5d9e22eb0045"
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/CollectorsQuest/foursquare-php/archive/master.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "library",
-            "installation-source": "source",
-            "time": "2013-01-05 20:23:05"
+            "installation-source": "dist"
         },
         {
             "name": "doctrine/common",
