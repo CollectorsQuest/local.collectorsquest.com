@@ -1,5 +1,5 @@
 {
-    "hash": "2c064067492d3845aa41a1b49493e88a",
+    "hash": "7c82742e00098c5491f8d1cb9a0251a8",
     "packages": [
         {
             "name": "CarpeHora/ExtraPropertiesBehavior",
@@ -45,14 +45,14 @@
         {
             "name": "CollectorsQuest/foursquare",
             "version": "0.1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:CollectorsQuest/foursquare-php.git",
-                "reference": "af1a76c36143e6d6062f055dc2dc5d9e22eb0045"
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/CollectorsQuest/foursquare-php/archive/master.zip",
+                "reference": null,
+                "shasum": null
             },
             "type": "library",
-            "installation-source": "source",
-            "time": "2013-01-05 20:23:05"
+            "installation-source": "dist"
         },
         {
             "name": "doctrine/common",
@@ -986,53 +986,6 @@
             ]
         },
         {
-            "name": "raveren/kint",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/raveren/kint.git",
-                "reference": "f9a92137f39e16ec4c4e736aa733e746ee1cdeb0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/raveren/kint/archive/f9a92137f39e16ec4c4e736aa733e746ee1cdeb0.zip",
-                "reference": "f9a92137f39e16ec4c4e736aa733e746ee1cdeb0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.0"
-            },
-            "time": "2012-12-20 14:07:55",
-            "type": "library",
-            "installation-source": "source",
-            "autoload": {
-                "files": [
-                    "Kint.class.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Rokas Šleinius",
-                    "homepage": "https://github.com/raveren"
-                },
-                {
-                    "name": "Contributors",
-                    "homepage": "https://github.com/raveren/kint/contributors"
-                }
-            ],
-            "description": "Kint - debugging helper for PHP developers",
-            "homepage": "https://github.com/raveren/kint",
-            "keywords": [
-                "php",
-                "debug",
-                "kint"
-            ]
-        },
-        {
             "name": "sensio/distribution-bundle",
             "version": "v2.1.5",
             "target-dir": "Sensio/Bundle/DistributionBundle",
@@ -1630,7 +1583,6 @@
         "carpehora/extrapropertiesbehavior": 20,
         "mopa/bootstrap-bundle": 20,
         "mopa/composer-bridge": 20,
-        "collectorsquest/foursquare": 20,
-        "raveren/kint": 20
+        "collectorsquest/foursquare": 20
     }
 }

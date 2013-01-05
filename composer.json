@@ -2,7 +2,10 @@
     "name": "symfony/framework-standard-edition",
     "description": "Local Collector",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": {
+            "": "src/",
+            "TheTwelve\\Foursquare\\": "vendor/CollectorsQuest/foursquare/lib"
+        }
     },
     "repositories": {
         "foursquare-php": {
