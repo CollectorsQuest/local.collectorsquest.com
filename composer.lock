@@ -1,5 +1,5 @@
 {
-    "hash": "7c3da9c407cbdaa4b45aa8f5130ecd46",
+    "hash": "5092e58ca795ab0c05431964bb2a369e",
     "packages": [
         {
             "name": "CarpeHora/ExtraPropertiesBehavior",
@@ -351,7 +351,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -394,7 +394,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -698,6 +698,116 @@
             "keywords": [
                 "log",
                 "logging"
+            ]
+        },
+        {
+            "name": "mopa/bootstrap-bundle",
+            "version": "dev-master",
+            "target-dir": "Mopa/Bundle/BootstrapBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phiamo/MopaBootstrapBundle.git",
+                "reference": "1c24caefbd25b508b39811d402bf6682a26fcf74"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/phiamo/MopaBootstrapBundle/archive/1c24caefbd25b508b39811d402bf6682a26fcf74.zip",
+                "reference": "1c24caefbd25b508b39811d402bf6682a26fcf74",
+                "shasum": ""
+            },
+            "require": {
+                "mopa/composer-bridge": "dev-master",
+                "symfony/symfony": ">=2.1,<2.3-dev"
+            },
+            "suggest": {
+                "knplabs/knp-paginator-bundle": "dev-master",
+                "craue/formflow-bundle": "dev-master",
+                "twitter/bootstrap": "2.0.*",
+                "knplabs/knp-menu-bundle": "1.1.*",
+                "jlong/sass-twitter-bootstrap": "dev-master"
+            },
+            "time": "2012-12-19 11:26:30",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Mopa\\Bundle\\BootstrapBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp A. Mohrenweiser",
+                    "email": "phiamo@googlemail.com",
+                    "homepage": "http://bootstrap.mohrenweiserpartner.de"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/phiamo/MopaBootstrapBundle/contributors"
+                }
+            ],
+            "description": "Easy integration of twitters bootstrap into symfony2",
+            "keywords": [
+                "form",
+                "extra form",
+                "bootstrap",
+                "bootstrap form",
+                "template"
+            ]
+        },
+        {
+            "name": "mopa/composer-bridge",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/phiamo/MopaComposerBridge.git",
+                "reference": "v1.0.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/phiamo/MopaComposerBridge/archive/v1.0.0.zip",
+                "reference": "v1.0.0",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "2.*"
+            },
+            "time": "2012-10-11 18:29:49",
+            "type": "symfony-bridge",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Mopa\\Bridge\\Composer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Philipp A. Mohrenweiser",
+                    "email": "phiamo@googlemail.com",
+                    "homepage": "http://bootstrap.mohrenweiserpartner.de"
+                },
+                {
+                    "name": "Community contributions",
+                    "homepage": "https://github.com/phiamo/MopaComposerBridge/contributors"
+                }
+            ],
+            "description": "Symfony2 Composer Bridge",
+            "homepage": "http://bootstrap.mohrenweiserpartner.de",
+            "keywords": [
+                "Symfony2",
+                "composer"
             ]
         },
         {
@@ -1419,6 +1529,35 @@
             "keywords": [
                 "templating"
             ]
+        },
+        {
+            "name": "twitter/bootstrap",
+            "version": "v2.2.2",
+            "target-dir": "twitter/bootstrap",
+            "source": {
+                "type": "git",
+                "url": "git://github.com/twitter/bootstrap.git",
+                "reference": "v2.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/twitter/bootstrap/archive/v2.2.2.zip",
+                "reference": "v2.2.2",
+                "shasum": ""
+            },
+            "time": "2012-12-08 20:57:21",
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
+            "homepage": "http://twitter.github.com/bootstrap/",
+            "keywords": [
+                "css",
+                "bootstrap"
+            ]
         }
     ],
     "packages-dev": null,
@@ -1430,5 +1569,7 @@
         "twig/extensions": 20,
         "kriswallsmith/assetic": 20,
         "carpehora/extrapropertiesbehavior": 20
+        "mopa/bootstrap-bundle": 20,
+        "mopa/composer-bridge": 20
     }
 }
