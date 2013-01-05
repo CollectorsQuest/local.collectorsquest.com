@@ -1,6 +1,6 @@
 {
     "name": "symfony/framework-standard-edition",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "Local Collector",
     "autoload": {
         "psr-0": { "": "src/" }
     },
