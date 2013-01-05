@@ -1,0 +1,7 @@
+parameters:
+#    collectors_quest_local.example.class: CollectorsQuest\LocalBundle\Example
+
+services:
+#    collectors_quest_local.example:
+#        class: %collectors_quest_local.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
