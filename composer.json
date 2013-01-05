@@ -37,7 +37,8 @@
         "twitter/bootstrap": "v2.2.2",
         "mopa/bootstrap-bundle": "dev-master",
         "mopa/composer-bridge": "dev-master",
-        "CollectorsQuest/foursquare": "0.1.*@dev"
+        "CollectorsQuest/foursquare": "0.1.*@dev",
+        "raveren/kint": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
